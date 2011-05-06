@@ -7,9 +7,14 @@ using System.Drawing.Imaging;
 
 namespace rasteryzerorenderer
 {
+    /**
+     <summary>
+     trójkąt w R2
+     </summary>
+     */
     class Triangle2D
     {
-        public Point2D[] v;
+        public Point2D[] v; //tablica wierzchołków (3elementowa oczywiście)
 
         public Triangle2D()
         {
@@ -35,8 +40,12 @@ namespace rasteryzerorenderer
             this.v[2] = new Point2D(v3.x, v3.y, v3.z);
 
         }
-
-        public bool contains_point(Point2D p)
+        /**
+         <summary>
+         * metoda sprawdza, czy punkt z argumentu jest wewnątrz trójkąta
+         </summary>
+         */
+        public bool contains_point(Point2D p) //nieco ładniej zapisany wzór z wykładu.
         {
             float shit1 = (v[0].x - v[1].x) * (p.y - v[0].y)
                 - (v[0].y - v[1].y) * (p.x - v[0].x);
@@ -55,10 +64,11 @@ namespace rasteryzerorenderer
         }
         /**
           <summary
-         * Metoda... Dajmy na to, zwracająca kolor
-         * w punkcie z argumentu w układzie płaszczyzny,
-         * a jeśli punkt poza trójkątem, to jakiegoś nulla.
+          Metoda... Dajmy na to, zwracająca kolor
+          w punkcie z argumentu w układzie płaszczyzny,
+          a jeśli punkt poza trójkątem, to jakiegoś nulla.
          </summary>
+         Wzór na ten szajs jest w wykładzie
          */
         public Color interpolate(Point2D color)
         {
@@ -95,16 +105,21 @@ namespace rasteryzerorenderer
                 );
             return res; 
         }
-
+        /**
+         <summary>
+         Metoda zwracająca interpolowaną głębokość dla danego punktu trójkąta
+         (w pełni analogiczna do powyższej)
+         </summary>
+         */
         public float interpolateDepth(float x, float y)
         {
             float res;
             float[] lambda = new float[3];
             float  y1, y2, y3,
-                     x1, x2, x3;
-            float y2_y3, x_x3, x3_x2, y_y3,
-                    x1_x3, y1_y3;
-          //  float y3_y1;//, x2_x3;
+                   x1, x2, x3;
+            float  y2_y3, x_x3, 
+                   x3_x2, y_y3,
+                   x1_x3, y1_y3;
             
             y1 = v[0].y; y2 = v[1].y; y3 = v[2].y;
             x1 = v[0].x; x2 = v[1].x; x3 = v[2].x;
@@ -120,7 +135,7 @@ namespace rasteryzerorenderer
             lambda[1] /= mian;
             lambda[2] = 1 - (lambda[0] + lambda[1]);
             res = lambda[0] * v[0].depth + lambda[1] * v[1].depth + lambda[2] * v[2].depth;
-            return res; //wypadałoby to jednak skasować
+            return res; 
         }
     }
 }

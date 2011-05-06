@@ -189,7 +189,7 @@ namespace rasteryzerorenderer
             };
         }
         /**
-         * przepisać z:
+         * z:
          * http://kb.komires.net/article.php?id=6
          * 
          * Viewmatrix będzie przyjmować parametry

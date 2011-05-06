@@ -7,13 +7,16 @@ using System.Drawing.Imaging;
 
 namespace rasteryzerorenderer
 {
+    /**
+     punkt w R3. W sumie tą klasę można wywalić i zastąpnić klasą Vector
+     */
     class Point3D
     {
-        public float x;
+        public float x; //3 współrzędne punktu w R3
         public float y;
         public float z;
-        public float w;
-        public Intensity color;
+        public float w; //coś kurde miałem na myśli, ale zrezygnowałem. To jest zbędne ;)
+        public Intensity color; //kolor (jeśli np. punkt jest wierzchołkiem trójkąta)
         public Point3D()
         {
             x = 0.0f;
@@ -56,10 +59,12 @@ namespace rasteryzerorenderer
             this.w = w;
             this.color = color;
         }
+        
         public static Point3D operator +(Point3D left, Point3D right)
         {
             return new Point3D(left.x + right.x, left.y + right.y, left.z + right.z);
         }
+         
         public override string ToString()
         {
             return "X= " + this.x + ", Y= " + this.y + ", Z= " + this.z+", W= "+this.w;
