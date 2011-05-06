@@ -5,6 +5,12 @@ using System.Text;
 
 namespace rasteryzerorenderer
 {
+    /**
+     <summary>
+     Klasa reprezentuje trójkąt w R3 - składa się on z 3 punktów w R3, zapisanych w
+     tablicy Point3D[] v
+     </summary>
+     */
     class Triangle3D
     {
         public Point3D[] v;
@@ -25,6 +31,7 @@ namespace rasteryzerorenderer
         /**
          <summary>
          mnoży lewostronnie każdy wierzchołek przez macierz
+         czyli przekształca trójkąt (np. obraca)
          </summary>
          **/
         public void multiplyLeftByMatrix(Matrix4x4 m){
@@ -37,6 +44,12 @@ namespace rasteryzerorenderer
         {
             return "" + v[0] + ", " + v[1] + ", " + v[2];
         }
+
+        /**
+         <summary>
+         zwraca wektor normalny do trójkąta
+         </summary>
+         */
         public Vector fuckinNormal()
         {
             Vector v1 = new Vector(v[0].x - v[1].x, v[0].y - v[1].y, v[0].z - v[1].z);

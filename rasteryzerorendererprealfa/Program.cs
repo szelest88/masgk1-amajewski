@@ -114,22 +114,24 @@ namespace rasteryzerorenderer
             ColorBuffer myBuf = new ColorBuffer(400, 400);
             DepthBuffer db = new DepthBuffer(400, 400);//konstruktor inicjuje +niesk
 
-
-            myBuf.clearBuffer(Color.White); //myBuf 100 x 100
-            for (int i = 0; i < 400; i++)
+            //dodamy "ręcznie" (analogicznie do Renderer.renderuj...()) 2 trójkąty
+            myBuf.clearBuffer(Color.White); //wypełniamy bufor koloru bielą
+            //I trójkąt:
+            for (int i = 0; i < 400; i++) //dla każdego piksela bufora
                 for (int j = 0; j < 400; j++)
                     if (
-                        res.contains_point(new Point2D(-1 + i * 0.005f, -1 + j * 0.005f, 0))
+                        res.contains_point(new Point2D(-1 + i * 0.005f, -1 + j * 0.005f, 0)) //jeśli punkt należy do trójkąta
                         &&
-                        res.interpolateDepth(-1 + i * 0.005f, -1 + j * 0.005f)<db.depth[i,j]
-                        )//trzeci parametr jest ignorowany!
+                        res.interpolateDepth(-1 + i * 0.005f, -1 + j * 0.005f)<db.depth[i,j] //i jego głębokość < od zapisanej w buforze gł
+                        )
                     {
-                        myBuf.setPixel(i, j, res.interpolate(new Point2D(-1 + i * 0.005f, -1 + j * 0.005f, 
+                        myBuf.setPixel(i, j, res.interpolate(new Point2D(-1 + i * 0.005f, -1 + j * 0.005f,  //wrzucamy piksel do bufora kol
                             res.interpolateDepth(-1 + i * 0.005f, -1 + j * 0.005f))));
                             //zamiast 3 parametru, interpolowana głębokość (funkcja)
-                        db.setPixel(i,j,res.interpolateDepth(-1 + i * 0.005f, -1 + j * 0.005f));
+                        db.setPixel(i,j,res.interpolateDepth(-1 + i * 0.005f, -1 + j * 0.005f)); //i jego głebokość do bufora głębokości
                     };
 
+            //II trójkąt: analogicznie
             for (int i = 0; i < 400; i++)
                 for (int j = 0; j < 400; j++)
                     if (
@@ -150,7 +152,8 @@ namespace rasteryzerorenderer
                         myBuf.setPixel(i, j, res2.interpolate(new Point2D(-1 + i * 0.005f, -1 + j * 0.005f, 0)));//zamiast 3 parametru, interpolowana głębokość (funkcja)
            */
 
-           //stąd
+           // tu już skorzystamy z klasy Renderer
+
           //  System.Console.WriteLine("Zapierdalam pierwszą sferę.");
           //  Renderer.renderujSfere(myBuf, new Point3D(2, 0, 2), 0.1f, afterTrans, lightPos);
           //  System.Console.WriteLine("Zapierdalam drugą sferę.");

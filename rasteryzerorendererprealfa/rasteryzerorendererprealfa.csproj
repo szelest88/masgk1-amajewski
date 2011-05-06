@@ -48,7 +48,6 @@
   <ItemGroup>
     <Compile Include="ColorBuffer.cs" />
     <Compile Include="DepthBuffer.cs" />
-    <Compile Include="Enumeratorek.cs" />
     <Compile Include="Intensity.cs" />
     <Compile Include="Light.cs" />
     <Compile Include="Matrix4x4.cs" />
