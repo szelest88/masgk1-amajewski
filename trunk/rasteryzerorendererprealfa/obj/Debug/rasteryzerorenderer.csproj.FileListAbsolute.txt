@@ -1,5 +1,0 @@
-C:\Documents and Settings\Konto2\Ustawienia lokalne\Dane aplikacji\Temporary Projects\rasteryzerorenderer\bin\Debug\rasteryzerorenderer.exe
-C:\Documents and Settings\Konto2\Ustawienia lokalne\Dane aplikacji\Temporary Projects\rasteryzerorenderer\bin\Debug\rasteryzerorenderer.pdb
-C:\Documents and Settings\Konto2\Ustawienia lokalne\Dane aplikacji\Temporary Projects\rasteryzerorenderer\obj\Debug\ResolveAssemblyReference.cache
-C:\Documents and Settings\Konto2\Ustawienia lokalne\Dane aplikacji\Temporary Projects\rasteryzerorenderer\obj\Debug\rasteryzerorenderer.exe
-C:\Documents and Settings\Konto2\Ustawienia lokalne\Dane aplikacji\Temporary Projects\rasteryzerorenderer\obj\Debug\rasteryzerorenderer.pdb

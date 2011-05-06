@@ -1,5 +1,0 @@
-C:\Documents and Settings\Konto2\Moje dokumenty\Visual Studio 2008\Projects\rasteryzerorendererprealfa\rasteryzerorendererprealfa\bin\Release\rasteryzerorendererprealfa.exe
-C:\Documents and Settings\Konto2\Moje dokumenty\Visual Studio 2008\Projects\rasteryzerorendererprealfa\rasteryzerorendererprealfa\bin\Release\rasteryzerorendererprealfa.pdb
-C:\Documents and Settings\Konto2\Moje dokumenty\Visual Studio 2008\Projects\rasteryzerorendererprealfa\rasteryzerorendererprealfa\obj\Release\ResolveAssemblyReference.cache
-C:\Documents and Settings\Konto2\Moje dokumenty\Visual Studio 2008\Projects\rasteryzerorendererprealfa\rasteryzerorendererprealfa\obj\Release\rasteryzerorendererprealfa.exe
-C:\Documents and Settings\Konto2\Moje dokumenty\Visual Studio 2008\Projects\rasteryzerorendererprealfa\rasteryzerorendererprealfa\obj\Release\rasteryzerorendererprealfa.pdb
