@@ -24,7 +24,7 @@ namespace rasteryzerorenderer
             z = 0.0f;
             w = 0.0f;
 
-            this.color = new Intensity(Color.Green);
+            this.color = new Intensity(Color.Gray);
         }
         public Point3D(float x, float y, float z)
         {
@@ -32,7 +32,7 @@ namespace rasteryzerorenderer
             this.y = y;
             this.z = z;
             this.w = 0.0f;
-            this.color = new Intensity(Color.Green);
+            this.color = new Intensity(Color.Gray);
         }
         public Point3D(float x, float y, float z, float w)
         {
@@ -41,7 +41,7 @@ namespace rasteryzerorenderer
             this.z = z;
             this.w = w;
 
-            this.color = new Intensity(Color.Blue);
+            this.color = new Intensity(Color.Gray);
         }
         public Point3D(float x, float y, float z, Intensity color)
         {
@@ -62,7 +62,7 @@ namespace rasteryzerorenderer
         
         public static Point3D operator +(Point3D left, Point3D right)
         {
-            return new Point3D(left.x + right.x, left.y + right.y, left.z + right.z);
+            return new Point3D(left.x + right.x, left.y + right.y, left.z + right.z,left.color);
         }
          
         public override string ToString()

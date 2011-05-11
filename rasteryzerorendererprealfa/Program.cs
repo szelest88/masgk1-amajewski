@@ -30,7 +30,8 @@ namespace rasteryzerorenderer
 
             //PARAMETRY WIDOKU I ŚWIATŁA!!!
             Vector observer = new Vector(0, 0, 0);
-            Vector lookAt = new Vector(1, 0, 1);
+            Vector lookAt = new Vector(1, 0, 1f);//101
+            float kat = 90;
 
             System.Console.WriteLine("TEST PRZEKSZTAŁCEŃ");
             Matrix4x4 view = new Matrix4x4();
@@ -47,7 +48,7 @@ namespace rasteryzerorenderer
             view.show();
             System.Console.WriteLine();
             Matrix4x4 proj = new Matrix4x4();
-            proj.setAsProjectionMatrix(45, 0.05f, 100f);
+            proj.setAsProjectionMatrix(kat, 0.05f, 100f);
             System.Console.WriteLine("Proj:");
             proj.show();
 
@@ -154,15 +155,15 @@ namespace rasteryzerorenderer
 
            // tu już skorzystamy z klasy Renderer
 
-          //  System.Console.WriteLine("Zapierdalam pierwszą sferę.");
-          //  Renderer.renderujSfere(myBuf, new Point3D(2, 0, 2), 0.1f, afterTrans, lightPos);
-          //  System.Console.WriteLine("Zapierdalam drugą sferę.");
-          //  Renderer.renderujSfere(myBuf, new Point3D(1.9f, 0, 2.2f), 0.1f, afterTrans, lightPos);
-            System.Console.WriteLine("Zapierdalam sześcian.");
-            Renderer.renderujSszescian(myBuf, new Point3D(2.7f, -0.2f, 3.0f), 0.05f, afterTrans, lightPos);
-            System.Console.WriteLine("Zapierdalam jakieś nie wiadomo co.");
-            Renderer.renderujJakisShit(myBuf, new Point3D(0.5f, 0.0f, 1.0f), 0.05f, afterTrans, lightPos);
-            
+            System.Console.WriteLine("Liczę pierwszą sferę.");//2,0,2
+            Renderer.renderujSfere(myBuf, new Point3D(2.0f, 0.0f, 2.0f), 0.1f, afterTrans, lightPos,16,db,new Intensity(1,0,0));
+           // System.Console.WriteLine("Liczę drugą sferę.");
+           // Renderer.renderujSfere(myBuf, new Point3D(1.9f, 0, 2.2f), 0.1f, afterTrans, lightPos,16, db,new Intensity(0,0,1));
+            System.Console.WriteLine("Liczę sześcian.");
+            Renderer.renderujSszescian(myBuf, new Point3D(3.3f, -0.2f, 3.0f), 0.05f, afterTrans, lightPos,new Intensity(0,1,0));
+            System.Console.WriteLine("Liczę jakieś nie wiadomo co.");
+            Renderer.renderujStozek(myBuf, new Point3D(2.0f, 0.0f, 2.0f),0.2f, afterTrans, lightPos,32, db,new Intensity(1,0,0));
+            //Renderer.renderujJakisShit(myBuf, new Point3D(0.5f, 0.0f, 1.0f), 0.1f, afterTrans, lightPos, 32, db, new Intensity(0, 0, 1));
             myBuf.bmp.Save(@"C:\res.bmp", ImageFormat.Bmp);
        
 

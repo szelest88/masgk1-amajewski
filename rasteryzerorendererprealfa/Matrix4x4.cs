@@ -161,7 +161,7 @@ namespace rasteryzerorenderer
 
 
 
-            return new Point3D(wiersz1, wiersz2, wiersz3, wiersz4);
+            return new Point3D(wiersz1, wiersz2, wiersz3, wiersz4, right.color);
         }
         /**
          * <summary>

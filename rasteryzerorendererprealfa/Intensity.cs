@@ -118,6 +118,13 @@ namespace rasteryzerorenderer
         {
             return new Intensity(arg1.R * arg2.R, arg1.G * arg2.G, arg1.B * arg2.B);
         }
+        public static Intensity operator +(Intensity i1, Intensity i2)
+        {
+            return new Intensity(
+                Math.Min(1, i1.R + i2.R),
+                Math.Min(1, i1.G + i2.G),
+                Math.Min(1, i1.B + i2.B));
+        }
         public static Intensity operator *(Intensity arg1, float arg2)
         {
             return new Intensity(arg1.R * arg2, arg1.G * arg2, arg1.B * arg2);
@@ -128,6 +135,9 @@ namespace rasteryzerorenderer
         }
 
         #endregion Methods
-
+        public override string ToString()
+        {
+            return "(R="+R+",G="+G+",B="+B+")";
+        }
     }
 }
