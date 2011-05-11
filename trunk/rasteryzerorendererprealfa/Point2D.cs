@@ -35,6 +35,13 @@ namespace rasteryzerorenderer
             this.depth = depth;
             this.color = new Intensity(color);
         }
+        public Point2D(float x, float y, float depth, Intensity color)
+        {
+            this.x = x;
+            this.y = y;
+            this.depth = depth;
+            this.color = color;
+        }
         public override string ToString()
         {
             return "x= " + x + ",y= " + y + "depth= " + depth;
